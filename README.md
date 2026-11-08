@@ -92,3 +92,72 @@ Active development. Core document ingestion, retrieval, reranking, local answer 
 Paulin Binusha Sahayaranjan
 
 GitHub: [Binusha28](https://github.com/Binusha28)
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.12
+- [uv](https://docs.astral.sh/uv/) for Python dependency management
+- [Ollama](https://ollama.com/) installed and running
+- Sufficient memory and disk space for the language model and semantic verification models
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Binusha28/evidence-rag-assistant.git
+cd evidence-rag-assistant
+```
+
+### 2. Install Python Dependencies
+
+```bash
+uv sync
+```
+
+The project requires Python 3.12. The `uv` dependency manager installs the packages specified in `pyproject.toml` and `uv.lock`.
+
+### 3. Download the Local Language Model
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+Ensure the Ollama service is running before launching the application. The default language model is Qwen2.5 3B.
+
+### 4. Launch the Research Assistant
+
+```bash
+uv run streamlit run app.py
+```
+
+Open the local URL displayed by Streamlit, typically `http://localhost:8501`.
+
+### 5. Use the Application
+
+1. Upload one or more research papers in PDF format.
+2. Wait for document extraction, indexing, and model initialization.
+3. Enter a research question about the uploaded documents.
+4. Review the generated answer and its verification status.
+5. Expand the evidence passages to inspect the supporting source text.
+
+### 6. Run Automated Tests
+
+```bash
+uv run pytest -q
+```
+
+### 7. Check Code Quality
+
+```bash
+uv run ruff check .
+uv run ruff format --check .
+```
+
+## Important Limitations
+
+- The assistant runs locally and requires Ollama and its configured model.
+- Initial model downloads and loading can take time.
+- Automated semantic verification is not a guarantee of factual correctness.
+- Answer quality depends on the uploaded documents, retrieved passages, and language model.
+- The system is a research prototype, not a substitute for expert review or professional decision-making.
