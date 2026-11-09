@@ -105,7 +105,7 @@ class EvidenceAnswerGenerator:
             f"Available evidence:\n{evidence_context}\n\n"
             "Write a concise, scientifically accurate answer using only "
             "the available evidence.\n"
-            "QUESTION COVERAGE REQUIREMENTS:\n"
+            "QUESTION COVERAGE REQUIREMENTS:\n0. Answer the exact research question directly in the first factual sentence.\n   If asked to name or identify components, explicitly name those components\n   rather than describing only their internal mechanisms.\n   Include a supporting evidence citation for that first sentence.\n"
             "1. Identify the main components of the research question.\n"
             "2. Address each component when directly supported by evidence.\n"
             "3. For comparison questions, explain both subjects separately "

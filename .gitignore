@@ -25,3 +25,6 @@ logs/
 .mypy_cache/
 .coverage
 htmlcov/
+
+# Local research test document
+/transformer_research.pdf
