@@ -161,3 +161,27 @@ uv run ruff format --check .
 - Automated semantic verification is not a guarantee of factual correctness.
 - Answer quality depends on the uploaded documents, retrieved passages, and language model.
 - The system is a research prototype, not a substitute for expert review or professional decision-making.
+
+## Application Demonstration
+
+The following screenshots show an end-to-end test using the research paper *Attention Is All You Need*.
+
+### 1. Evidence-Grounded Answer
+
+The assistant identifies the encoder and decoder as the two main components of the Transformer architecture. The generated answer includes evidence citations and passes automated verification in one generation attempt.
+
+![Verified research answer](docs/screenshots/verified-answer.png)
+
+### 2. Retrieved Supporting Evidence
+
+Retrieved passages are displayed with citation identifiers, source document names, and page numbers so users can inspect the evidence supporting the generated answer.
+
+![Retrieved research evidence](docs/screenshots/retrieved-evidence.png)
+
+### 3. Additional Retrieved Passages
+
+The interface also displays additional retrieved passages to provide transparency into the evidence available during answer generation.
+
+![Additional retrieved evidence](docs/screenshots/additional-evidence.png)
+
+**Note:** Passing automated verification indicates that the generated claims met the configured evidence checks. It does not guarantee factual correctness or complete coverage of every research question.
