@@ -102,6 +102,10 @@ class EvidenceAnswerGenerator:
 
         prompt = (
             f"Research question:\n{question}\n\n"
+            "ANSWER THE QUESTION FIRST:\n"
+            "Your first factual sentence must directly provide the requested answer.\n"
+            "If asked to name two components, explicitly name both components.\n"
+            "Do not substitute a description of their internal mechanisms.\n\n"
             f"Available evidence:\n{evidence_context}\n\n"
             "Write a concise, scientifically accurate answer using only "
             "the available evidence.\n"
